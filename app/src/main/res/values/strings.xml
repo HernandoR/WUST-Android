@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My First Application</string>
+    <string name="Click_Button">You have clicked button %d times</string>
+</resources>

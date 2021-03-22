@@ -1,0 +1,4 @@
+include ':bottontestapplication'
+include ':app:mysecondapplication'
+rootProject.name='My First Application'
+include ':app'
