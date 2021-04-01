@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/My_First_Application.iml" filepath="$PROJECT_DIR$/.idea/modules/My_First_Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android_lab/My_First_Application.android_lab.iml" filepath="$PROJECT_DIR$/.idea/modules/android_lab/My_First_Application.android_lab.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/My_First_Application.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/My_First_Application.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bottontestapplication/My_First_Application.bottontestapplication.iml" filepath="$PROJECT_DIR$/.idea/modules/bottontestapplication/My_First_Application.bottontestapplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bottontestapplication/My_First_Application.botton_test_application.iml" filepath="$PROJECT_DIR$/.idea/modules/bottontestapplication/My_First_Application.botton_test_application.iml" />
     </modules>
   </component>
 </project>

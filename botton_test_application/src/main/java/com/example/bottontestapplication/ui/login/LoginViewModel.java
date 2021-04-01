@@ -24,7 +24,7 @@ public class LoginViewModel extends ViewModel {
     LiveData<LoginFormState> getLoginFormState() {
         return loginFormState;
     }
-
+    // login result been obseved in loginActivity
     LiveData<LoginResult> getLoginResult() {
         return loginResult;
     }
