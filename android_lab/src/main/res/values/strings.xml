@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Android_Lab</string>
+    <string-array name="class_array">
+        <item>17级测试班</item>
+    </string-array>
+</resources>
