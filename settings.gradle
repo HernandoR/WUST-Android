@@ -1,3 +1,4 @@
+include ':exp2'
 include ':botton_test_application'
 rootProject.name='My First Application'
 include ':app'

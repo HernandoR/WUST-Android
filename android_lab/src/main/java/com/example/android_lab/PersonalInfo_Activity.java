@@ -43,6 +43,7 @@ public class PersonalInfo_Activity extends AppCompatActivity implements View.OnC
         rgGrade = findViewById(R.id.grade_group);
         btnSubmit = findViewById(R.id.button);
         btnSubmit.setOnClickListener(this);
+        etName.setText(this.getIntent().getStringExtra("loginUserName"));
     }
 
     @Override

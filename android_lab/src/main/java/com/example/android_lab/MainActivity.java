@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnLogin:
                 if (loginCheck(inputUserName, inputPassword)) {
                     Intent intent = new Intent(this, PersonalInfo_Activity.class);
+                    intent.putExtra("loginUserName", inputUserName);
                     startActivity(intent);
                 }
                 break;
@@ -92,7 +93,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     boolean passwordCheck(String inputName, String inputPassword) {
-        return inputPassword.equals("1234567");
+        String password = this.getSharedPreferences("User_Pass", MODE_PRIVATE).getString(inputName, "1234567");
+        return inputPassword.equals(password);
     }
 
     boolean loginCheck(String inputName, String inputPassword) {
@@ -110,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void SaveSp(String inputUserName, String inputPassword) {
-        SharedPreferences UsrSp = this.getSharedPreferences("UserInfo", MODE_PRIVATE);
+        SharedPreferences UsrSp = this.getSharedPreferences("User_Pass", MODE_PRIVATE);
         if (UsrSp.edit()
                 .putString(inputUserName, inputPassword)
                 .commit()) {
