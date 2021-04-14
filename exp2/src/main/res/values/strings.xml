@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Android_Lab2</string>
+    <string-array name="music">
+        <item>"随缘"</item>
+        <item>"星星落在我头上"</item>
+        <item>"洋葱"</item>
+    </string-array>
+</resources>
