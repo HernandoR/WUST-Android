@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 dispInputByToast(inputUserName);
                 break;
             case R.id.btnLogDisp:
-                Log.i("MainActivity_Log", "onClick: Current input usr name：" + inputUserName);
+                Log.i("Lz_MainActivity_Log", "onClick: Current input usr name：" + inputUserName);
                 break;
             case R.id.btnSaveSp:
                 SaveSp(inputUserName, inputPassword);
