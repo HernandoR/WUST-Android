@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="广播接收者"
+        android:textColor="#4D0AC5"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/Button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="161dp"
+        android:onClick="btn_click"
+        android:text="静态注册"
+        android:textColor="#FFEB3B"
+        android:layout_marginLeft="140dp"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/Button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Button1"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="64dp"
+        android:onClick="btn_help_click"
+        android:text="动态注册"
+        android:textColor="#FFEB3B"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

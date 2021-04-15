@@ -70,7 +70,7 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="4dp"
+                android:layout_width="35dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 app:srcCompat="@mipmap/like" />
@@ -160,7 +160,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="117dp"
         android:layout_marginTop="69dp"
-        android:text="刘朕的个人信息"
+        android:text="刘朕个人信息"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

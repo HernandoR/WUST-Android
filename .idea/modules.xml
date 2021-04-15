@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/My_First_Application.iml" filepath="$PROJECT_DIR$/.idea/modules/My_First_Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Android_lab3/My_First_Application.Android_lab3.iml" filepath="$PROJECT_DIR$/.idea/modules/Android_lab3/My_First_Application.Android_lab3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Android_lab4/My_First_Application.Android_lab4.iml" filepath="$PROJECT_DIR$/.idea/modules/Android_lab4/My_First_Application.Android_lab4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Android_lab5/My_First_Application.Android_lab5.iml" filepath="$PROJECT_DIR$/.idea/modules/Android_lab5/My_First_Application.Android_lab5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Android_lab6/My_First_Application.Android_lab6.iml" filepath="$PROJECT_DIR$/.idea/modules/Android_lab6/My_First_Application.Android_lab6.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/android_lab/My_First_Application.android_lab.iml" filepath="$PROJECT_DIR$/.idea/modules/android_lab/My_First_Application.android_lab.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/My_First_Application.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/My_First_Application.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/botton_test_application/My_First_Application.botton_test_application.iml" filepath="$PROJECT_DIR$/.idea/modules/botton_test_application/My_First_Application.botton_test_application.iml" />
