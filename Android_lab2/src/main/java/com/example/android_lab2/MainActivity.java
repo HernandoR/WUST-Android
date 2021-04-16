@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText et_sno;  //学号
     EditText et_telno; //电话
     Spinner sp_music; //喜欢的音乐下拉框
-    Button btn_tel1, btn_msg, btn_musicPlay, btn_musicStop, btn_saveFile; //所有按钮
     MediaPlayer mp;
+    Button btn_tel1,btn_musicStop,btn_musicPlay;
 
-    int Music_R_Id[] = {R.raw.music2, R.raw.music1, R.raw.music3};  //实现和喜欢的音乐下拉框选项对应的音乐资源文件
+    int Music_R_Id[] = {R.raw.music2, R.raw.music1, R.raw.music3, R.raw.ferry};  //实现和喜欢的音乐下拉框选项对应的音乐资源文件
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
