@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText et_telno; //电话
     Spinner sp_music; //喜欢的音乐下拉框
     MediaPlayer mp;
-    Button btn_tel1,btn_musicStop,btn_musicPlay;
+    Button btn_tel1,btn_musicStop,btn_musicPlay,btn_sendMsg,btn_saveInfo;
 
     int Music_R_Id[] = {R.raw.music2, R.raw.music1, R.raw.music3, R.raw.ferry};  //实现和喜欢的音乐下拉框选项对应的音乐资源文件
 
@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         et_sno = findViewById(R.id.et_no);
         sp_music = findViewById(R.id.sp_music);
 
+        btn_saveInfo= findViewById(R.id.btn_saveFile);
+        btn_saveInfo.setOnClickListener(this);
+        btn_sendMsg = findViewById(R.id.btn_Msg);
+        btn_sendMsg.setOnClickListener(this);
         btn_tel1 = findViewById(R.id.btn_tel1);
         btn_tel1.setOnClickListener(this); //设置按钮的Click监听器
         btn_musicStop = findViewById(R.id.btn_MusicStop);
@@ -64,8 +68,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //发送短信功能  不需要申请权限  参数msgInfo为发送的短信信息
-    void fun_Msg(String msgInfo) {
-
+    void fun_Msg(String tel,String msgInfo) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_SENDTO); //意图动作
+        intent.setData(Uri.parse("smsto:"+tel));
+        intent.putExtra("sms_body",msgInfo);  //意图数据=>发短信
+        startActivity(intent);
     }
 
     //播放音乐功能
@@ -79,9 +87,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //停止播放音乐功能
     void fun_musicStop() {
-
+        mp.stop();
+        btn_musicPlay.setEnabled(true);
+        btn_musicStop.setEnabled(false);
     }
-
     //信息保存功能  存储到外部文件，需要申请权限
     void fun_SaveFile() {
         String info;
@@ -93,6 +102,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             info = "name:" + et_name.getText().toString() + "\n";
             writer.write(info);
             info = "sno:" + et_sno.getText().toString() + "\n";
+            writer.write(info);
+            info = "telno:" + et_telno.getText().toString() + "\n";
+            writer.write(info);
+            info = "music:" + sp_music.getSelectedItem().toString()+ "\n";
             writer.write(info);
 
         } catch (IOException e) {
@@ -112,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View v) {
+    public  void onClick(View v) {
         int id = v.getId();
         switch (id) {
             case R.id.btn_tel1:
@@ -125,15 +138,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 fun_musicPlay(r);
                 break;
             case R.id.btn_MusicStop:
-
+                fun_musicStop();
                 //填写代码，调用合适的函数实现停止播放功能
                 break;
             case R.id.btn_Msg:
+                fun_Msg(et_telno.getText().toString(),et_name.getText().toString()+","+et_sno.getText().toString());
                 //填写代码，调用合适的函数实现发短信功能
                 break;
             case R.id.btn_saveFile:
+                fun_SaveFile();
                 //填写代码，调用合适的函数实现保存信息到外部文件功能
-
                 break;
 
         }
