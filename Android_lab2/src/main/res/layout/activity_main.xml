@@ -73,7 +73,7 @@
                 android:layout_width="35dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@mipmap/like" />
+                app:srcCompat="@mipmap/liuzhen" />
 
         </LinearLayout>
 
