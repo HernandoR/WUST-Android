@@ -156,11 +156,11 @@
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="108dp"
-        android:layout_height="0dp"
+        android:layout_width="217dp"
+        android:layout_height="36dp"
         android:layout_marginStart="117dp"
         android:layout_marginTop="69dp"
-        android:text="刘朕个人信息"
+        android:text="“刘朕”学生个人信息"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
