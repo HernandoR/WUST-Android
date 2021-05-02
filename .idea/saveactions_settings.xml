@@ -7,6 +7,8 @@
         <option value="activateOnShortcut" />
         <option value="reformat" />
         <option value="rearrange" />
+        <option value="unqualifiedFieldAccess" />
+        <option value="unqualifiedMethodAccess" />
         <option value="missingOverrideAnnotation" />
         <option value="useBlocks" />
       </set>

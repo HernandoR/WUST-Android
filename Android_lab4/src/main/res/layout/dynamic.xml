@@ -21,7 +21,7 @@
         android:hint="请输入广播内容" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_unreg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edit1"
@@ -29,12 +29,12 @@
         android:text="Unregister Broadcast" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:layout_below="@+id/edit1"
-        android:layout_toRightOf="@id/button"
         android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/button_unreg"
+        android:layout_weight="1"
         android:text="Send" />
 </RelativeLayout>

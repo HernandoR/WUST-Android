@@ -15,7 +15,7 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="StaticBroadcast"/>
+                <action android:name="StaticBroadcast" />
             </intent-filter>
         </receiver>
 
@@ -24,11 +24,13 @@
             android:name=".MyDynamicReceiver"
             android:enabled="true"
             android:exported="true">
+
         </receiver>
 
         <activity android:name=".Dynamic">
             <intent-filter>
-                <action android:name="DynamicBroadcas"/>
+                <action android:name="DynamicBroadcast" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
@@ -36,11 +38,16 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StaticActivity" />
+
+        <activity android:name=".StaticActivity">
+            <intent-filter>
+                <action android:name="StaticBroadcast" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
 
     </application>

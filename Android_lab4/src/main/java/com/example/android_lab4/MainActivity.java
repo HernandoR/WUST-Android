@@ -30,52 +30,55 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String staticAction="StaticBroadcast"; //静态注册广播的action名字
+    private static final String staticAction = "StaticBroadcast"; //静态注册广播的action名字
+    private static final String HelpAction = "DynamicBroadcast";//动态注册广播的action名字
     private MyStaticReceiver staticReceiver;//广播接收者对象
-
-    private static final String HelpAction="DynamicBroadcast";//动态注册广播的action名字
     private MyDynamicReceiver helpReceiver;//求救的广播接收者对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        this.setContentView(R.layout.activity_main);
 
-        initStaticReceiver();//自定义广播接收者1
-        initHelpReceiver();//求救广播接收者1
+        this.initStaticReceiver();//自定义广播接收者1
+        this.initHelpReceiver();//求救广播接收者1
 
     }
 
 
     //进行动态注册
-    private void initStaticReceiver(){
-        staticReceiver=new MyStaticReceiver();//实例化对象
-        IntentFilter intentFilter=new IntentFilter();
+    private void initStaticReceiver() {
+        this.staticReceiver = new MyStaticReceiver();//实例化对象
+        IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(staticAction);
-        registerReceiver(staticReceiver,intentFilter);
+        this.registerReceiver(this.staticReceiver, intentFilter);
     }
 
     //动态注册广播接收者
-    private void initHelpReceiver(){
-        helpReceiver=new MyDynamicReceiver();//实例化对象
-        IntentFilter intentFilter=new IntentFilter();
+    private void initHelpReceiver() {
+        this.helpReceiver = new MyDynamicReceiver();//实例化对象
+        IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(HelpAction);
-        registerReceiver(helpReceiver,intentFilter);
+        this.registerReceiver(this.helpReceiver, intentFilter);
     }
 
-    protected void onDestroy(){
+    //结束时销毁
+    @Override
+    protected void onDestroy() {
         super.onDestroy();
-        unregisterReceiver(staticReceiver);
-        unregisterReceiver(helpReceiver);
+        this.unregisterReceiver(this.staticReceiver);
+        this.unregisterReceiver(this.helpReceiver);
     }
 
     //自定义广播按钮
-    public void btn_click(View view){
-        Intent intent=new Intent();
+    public void btn_click(View view) {
+        Intent intent = new Intent();
         intent.setAction(staticAction);
-        sendBroadcast(intent);
-        if(view.getId()==R.id.Button1)
+        this.sendBroadcast(intent);
+        if (view.getId() == R.id.Button1) {
             Toast.makeText(MainActivity.this, "静态注册", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     //动态注册广播按钮
@@ -83,8 +86,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent();
         Toast.makeText(MainActivity.this, "动态注册", Toast.LENGTH_SHORT).show();
         intent.setAction(HelpAction);
-        sendBroadcast(intent);
-        Intent intent1=new Intent(MainActivity.this,Dynamic.class);
-        startActivity(intent1);
+        this.sendBroadcast(intent);
+//        Intent intent1 = new Intent(MainActivity.this, Dynamic.class);
+//        this.startActivity(intent1);
     }
 }
