@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * 通过AS向导自定义的广播，静态注册方式
@@ -19,7 +20,10 @@ public class MyStaticReceiver extends BroadcastReceiver {
         // an Intent broadcast.
         //throw new UnsupportedOperationException("Not yet implemented");
         Log.i(mTag, "通过AS向导自定义广播接收者,接收到了消息");
-        Log.i(mTag, intent.getAction());//获取广播行为
+        Log.i(mTag, intent.getAction());//获取广播行为4
+        String msg = intent.getStringExtra("msg");
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
+
 
 }
