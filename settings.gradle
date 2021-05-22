@@ -1,3 +1,4 @@
+include ':android_lab7'
 include ':Android_lab6'
 include ':Android_lab5'
 include ':Android_lab4'
