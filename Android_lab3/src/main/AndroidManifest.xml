@@ -12,19 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BroadC">
+
         <receiver
             android:name=".SmsReceiver"
             android:enabled="true"
             android:exported="true">
-          <intent-filter>
-              <action android:name='android.provider.Telephony.SMS_RECEIVED'/>
-          </intent-filter>
+            <intent-filter>
+                <action android:name='android.provider.Telephony.SMS_RECEIVED' />
+            </intent-filter>
         </receiver>
 
-        <service android:name=".MyAudioService"
+        <service
+            android:name=".MyAudioService"
             android:enabled="true"
-            android:exported="true">
-        </service>
+            android:exported="true"></service>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

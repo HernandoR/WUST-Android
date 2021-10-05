@@ -24,27 +24,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        this.setContentView(R.layout.activity_main);
         //初始化所有人员信息
-        personInfos = new String[]{"susan", "Liming", "zhangsan", "Lihao"};
+        this.personInfos = new String[]{"susan", "Liming", "zhangsan", "Lihao"};
         //这里要填写代码，实现对各个布局文件中各种工件的关联，并添加按钮的Click事件监听器
-        btn = findViewById(R.id.btnToastDisp);
-        btn.setOnClickListener(this);
-        btn = findViewById(R.id.btnLogDisp);
-        btn.setOnClickListener(this);
-        btn = findViewById(R.id.btnSaveSp);
-        btn.setOnClickListener(this);
-        btn = findViewById(R.id.btnLogin);
-        btn.setOnClickListener(this);
-        btn = findViewById(R.id.btnCancel);
-        btn.setOnClickListener(this);
+        this.btn = this.findViewById(R.id.btnToastDisp);
+        this.btn.setOnClickListener(this);
+        this.btn = this.findViewById(R.id.btnLogDisp);
+        this.btn.setOnClickListener(this);
+        this.btn = this.findViewById(R.id.btnSaveSp);
+        this.btn.setOnClickListener(this);
+        this.btn = this.findViewById(R.id.btnLogin);
+        this.btn.setOnClickListener(this);
+        this.btn = this.findViewById(R.id.btnCancel);
+        this.btn.setOnClickListener(this);
     }
 
     //判断用户是否是合法用户，是返回true,否则返回false
     boolean checkInfo(String name) {
         boolean flag = false;
 
-        return Arrays.binarySearch(personInfos, name) >= 0;
+        return Arrays.binarySearch(this.personInfos, name) >= 0;
 
     }
 
@@ -53,25 +53,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        EditText etUser = findViewById(R.id.edit1);
-        EditText etPass = findViewById(R.id.edit2);
+        EditText etUser = this.findViewById(R.id.edit1);
+        EditText etPass = this.findViewById(R.id.edit2);
+
         String inputUserName = etUser.getText().toString();
         String inputPassword = etPass.getText().toString();
         switch (id) {
             case R.id.btnToastDisp:
-                dispInputByToast(inputUserName);
+                this.dispInputByToast(inputUserName);
                 break;
             case R.id.btnLogDisp:
                 Log.i("Lz_MainActivity_Log", "onClick: Current input usr name：" + inputUserName);
                 break;
             case R.id.btnSaveSp:
-                SaveSp(inputUserName, inputPassword);
+                this.SaveSp(inputUserName, inputPassword);
                 break;
             case R.id.btnLogin:
-                if (loginCheck(inputUserName, inputPassword)) {
+                if (this.loginCheck(inputUserName, inputPassword)) {
                     Intent intent = new Intent(this, PersonalInfo_Activity.class);
                     intent.putExtra("loginUserName", inputUserName);
-                    startActivity(intent);
+                    this.startActivity(intent);
                 }
                 break;
             case R.id.btnCancel:
@@ -82,9 +83,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+
     boolean userCheck(String inputName) {
 //        boolean tag= false;
-        for (String name : personInfos) {
+        for (String name : this.personInfos) {
             if (inputName.equals(name)) {
                 return true;
             }
@@ -98,11 +100,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     boolean loginCheck(String inputName, String inputPassword) {
-        if (!userCheck(inputName)) {
+        if (!this.userCheck(inputName)) {
             Toast.makeText(this, "用户名不存在", Toast.LENGTH_SHORT).show();
             return false;
         } else {
-            if (passwordCheck(inputName, inputPassword)) {
+            if (this.passwordCheck(inputName, inputPassword)) {
                 return true;
             } else {
                 Toast.makeText(this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
